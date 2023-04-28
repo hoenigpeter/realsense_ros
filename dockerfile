@@ -1,4 +1,4 @@
-FROM nvidia/cudagl:11.3.0-devel-ubuntu20.04
+FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -10,11 +10,12 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
 	python3 get-pip.py && \
 	rm get-pip.py
 
-# install lsb-release and curl
+# install lsb-release, curl, gnu
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     lsb-release \
     curl \
+    gnupg \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
