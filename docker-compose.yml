@@ -24,6 +24,6 @@ services:
       - ROS_IP=127.0.0.1
       - DISPLAY
       - QT_X11_NO_MITSHM=1
-    command: bash -c "source catkin_ws/devel/setup.bash; roslaunch --wait realsense2_camera rs_camera.launch"
+    command: bash -c "source catkin_ws/devel/setup.bash; roslaunch --wait realsense2_camera rs_camera.launch align_depth:=true depth_width:=640 depth_height:=480"
     stdin_open: true
     tty: true 
